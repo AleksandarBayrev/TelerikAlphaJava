@@ -71,7 +71,7 @@ public class UnitsOfWorkSolution {
 				}
 			}
 			
-			return "FAIL: " + unitName + " cound not be found!";
+			return "FAIL: " + unitName + " could not be found!";
 		}
 		
 		public String checkIfExists(String unitName) {			
@@ -130,7 +130,7 @@ public class UnitsOfWorkSolution {
 		
 		public String power(int count) {
 			StringBuilder sb = new StringBuilder();
-			sb.append("RESULT: ");
+			sb.append("RESULT:");
 			
 			ArrayList<Unit> temp = this.units;
 			
@@ -138,15 +138,15 @@ public class UnitsOfWorkSolution {
 			Collections.reverse(temp);
 			
 			for (int i = 0; i <= (count - 1); i++) {
-				sb.append(this.outputUnit(i) + ", ");
+				sb.append(" " + this.outputUnit(i) + ",");
 			}
 			
 			
-			if (sb.toString().equals("RESULT: ")) {
+			if (sb.toString().equals("RESULT:")) {
 				return sb.toString();
 			}
 			
-			return sb.replace(sb.length() - 2, sb.length(), "").toString();
+			return sb.replace(sb.length() - 1, sb.length(), "").toString();
 			
 		}
 	}
@@ -215,11 +215,11 @@ public class UnitsOfWorkSolution {
 			
 			else {
 				if (this.getUnitName().compareTo(o.getUnitName()) > 0) {
-					return 1;
+					return -1;
 				}
 				
 				else if (this.getUnitName().compareTo(o.getUnitName()) < 0) {
-					return -1;
+					return 1;
 				}
 				
 				else return 0;
